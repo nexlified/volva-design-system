@@ -5,3 +5,4 @@ global:
     base:
       dist/css/tokens.css: {}
       styles/base.css: {}
+      styles/typography.css: {}

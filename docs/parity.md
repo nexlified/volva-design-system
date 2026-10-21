@@ -12,6 +12,7 @@ Twig/CSS is the reference; Flutter widgets mirror prop names (snake_case -> came
 | price | yes | `VdsPrice` |
 | avatar | yes | `VdsAvatar` |
 | input | yes | via `VolvaTheme` `InputDecorationTheme` |
+| textarea, select, checkbox, radio, switch | yes | not ported yet |
 | search-bar | yes | `VdsSearchBar` |
 | empty-state | yes | `VdsEmptyState` |
 | vendor-card | yes | `VdsVendorCard` (+ `.skeleton`) |

@@ -1,0 +1,11 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set field_id = id|default('vds-select-' ~ name|default('field')) %}
+<div{{ attrs.addClass(error ? ['vds-select', 'has-error'] : ['vds-select']) }}>
+  {% if label %}<label class="vds-select__label" for="{{ field_id }}">{{ label }}{% if required %}<span aria-hidden="true"> *</span>{% endif %}</label>{% endif %}
+  <select class="vds-select__control" id="{{ field_id }}" name="{{ name }}"{% if required %} required{% endif %}{% if disabled %} disabled{% endif %}{% if error %} aria-invalid="true" aria-describedby="{{ field_id }}-msg"{% elseif help %} aria-describedby="{{ field_id }}-msg"{% endif %}>
+    {% if placeholder %}<option value=""{% if not value %} selected{% endif %} disabled>{{ placeholder }}</option>{% endif %}
+    {% for option in options %}<option value="{{ option.value }}"{% if option.value == value %} selected{% endif %}>{{ option.label }}</option>{% endfor %}
+  </select>
+  {% if error %}<p class="vds-select__msg vds-select__msg--error" id="{{ field_id }}-msg">{{ error }}</p>
+  {% elseif help %}<p class="vds-select__msg" id="{{ field_id }}-msg">{{ help }}</p>{% endif %}
+</div>

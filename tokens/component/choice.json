@@ -1,0 +1,11 @@
+{
+  "choice": {
+    "size": { "$type": "dimension", "$value": "20px" },
+    "radius": { "$type": "dimension", "$value": "{radius.sm}" },
+    "bg": { "$type": "color", "$value": "{color.surface.default}" },
+    "border": { "$type": "color", "$value": "{color.border.strong}" },
+    "checkedBg": { "$type": "color", "$value": "{color.brand.default}" },
+    "checkedFg": { "$type": "color", "$value": "{color.brand.on}" },
+    "switchWidth": { "$type": "dimension", "$value": "40px" }
+  }
+}

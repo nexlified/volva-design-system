@@ -1,6 +1,7 @@
 // Global config for every story: tokens + base styles + every component stylesheet.
 import '../dist/css/tokens.css';
 import '../styles/base.css';
+import '../styles/typography.css';
 
 // Components are authored as SDC (css next to twig); Drupal auto-attaches them, Storybook loads them all here.
 const styles = import.meta.glob('../components/**/*.css', { eager: true });

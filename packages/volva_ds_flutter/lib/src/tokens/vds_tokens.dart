@@ -74,6 +74,16 @@ abstract final class VdsChipTokens {
   static const Color borderActive = Color(0xFF0F8672);
 }
 
+abstract final class VdsChoiceTokens {
+  static const double size = 20;
+  static const double radius = 4;
+  static const Color bg = Color(0xFFFFFFFF);
+  static const Color border = Color(0xFFC9D1D1);
+  static const Color checkedBg = Color(0xFF0F8672);
+  static const Color checkedFg = Color(0xFFFFFFFF);
+  static const double switchWidth = 40;
+}
+
 abstract final class VdsInputTokens {
   static const double height = 44;
   static const double radius = 8;

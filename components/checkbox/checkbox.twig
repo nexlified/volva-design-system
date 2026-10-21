@@ -1,0 +1,10 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set field_id = id|default('vds-checkbox-' ~ name|default('field') ~ (value ? '-' ~ value : '')) %}
+<div{{ attrs.addClass(error ? ['vds-checkbox', 'has-error'] : ['vds-checkbox']) }}>
+  <label class="vds-checkbox__row" for="{{ field_id }}">
+    <input class="vds-checkbox__control" type="checkbox" id="{{ field_id }}" name="{{ name }}"{% if value %} value="{{ value }}"{% endif %}{% if checked %} checked{% endif %}{% if disabled %} disabled{% endif %}{% if error %} aria-invalid="true" aria-describedby="{{ field_id }}-msg"{% elseif help %} aria-describedby="{{ field_id }}-msg"{% endif %}>
+    <span class="vds-checkbox__label">{{ label }}</span>
+  </label>
+  {% if error %}<p class="vds-checkbox__msg vds-checkbox__msg--error" id="{{ field_id }}-msg">{{ error }}</p>
+  {% elseif help %}<p class="vds-checkbox__msg" id="{{ field_id }}-msg">{{ help }}</p>{% endif %}
+</div>
