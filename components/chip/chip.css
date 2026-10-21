@@ -1,0 +1,7 @@
+.vds-chip {
+  display: inline-flex; align-items: center; gap: var(--vds-space-2); height: var(--vds-chip-height); padding: 0 var(--vds-chip-padding-x);
+  font: inherit; font-size: var(--vds-chip-font-size); color: var(--vds-chip-fg); background: var(--vds-chip-bg);
+  border: 1px solid var(--vds-chip-border); border-radius: var(--vds-chip-radius); cursor: pointer; text-decoration: none; white-space: nowrap;
+}
+.vds-chip.is-active { background: var(--vds-chip-bg-active); color: var(--vds-chip-fg-active); border-color: var(--vds-chip-border-active); font-weight: var(--vds-font-weight-medium); }
+.vds-chip__remove { font-size: 1.1em; line-height: 1; }

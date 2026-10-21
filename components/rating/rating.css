@@ -1,0 +1,9 @@
+.vds-rating { display: inline-flex; align-items: center; gap: var(--vds-space-1); font-size: var(--vds-font-size-sm); }
+.vds-rating__stars {
+  font-size: var(--vds-rating-size); letter-spacing: 1px; line-height: 1;
+  background: linear-gradient(90deg, var(--vds-rating-star-filled) var(--vds-rating-pct), var(--vds-rating-star-empty) var(--vds-rating-pct));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.vds-rating__star--on { color: var(--vds-rating-star-filled); font-size: var(--vds-rating-size); line-height: 1; }
+.vds-rating__value { font-weight: var(--vds-font-weight-semibold); }
+.vds-rating__count { color: var(--vds-color-text-muted); }

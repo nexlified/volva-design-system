@@ -1,0 +1,11 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Map pin
+status: stable
+description: Marker chrome for map search - label pin or cluster count. The map canvas itself is supplied by the host. Flutter parity - VdsMapPin.
+props:
+  type: object
+  properties:
+    label: { type: string, description: 'Price / name for pin, count for cluster.' }
+    variant: { type: string, enum: [default, cluster], default: default }
+    active: { type: boolean, default: false }
+    visited: { type: boolean, default: false }

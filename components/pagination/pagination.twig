@@ -1,0 +1,12 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set cur = current|default(1) %}
+{% set base = base_url|default('?page=') %}
+{% set start = max(1, min(cur - 2, total - 4)) %}
+{% set end = min(total, start + 4) %}
+<nav{{ attrs.addClass(['vds-pagination']) }} aria-label="Pagination">
+  <a class="vds-pagination__item{% if cur <= 1 %} is-disabled{% endif %}" href="{{ base }}{{ cur - 1 }}" rel="prev"{% if cur <= 1 %} aria-disabled="true"{% endif %}>Previous</a>
+  {% for n in start..end %}
+    <a class="vds-pagination__item{% if n == cur %} is-current{% endif %}" href="{{ base }}{{ n }}"{% if n == cur %} aria-current="page"{% endif %}>{{ n }}</a>
+  {% endfor %}
+  <a class="vds-pagination__item{% if cur >= total %} is-disabled{% endif %}" href="{{ base }}{{ cur + 1 }}" rel="next"{% if cur >= total %} aria-disabled="true"{% endif %}>Next</a>
+</nav>

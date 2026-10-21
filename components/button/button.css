@@ -1,0 +1,30 @@
+.vds-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--vds-space-2);
+  height: var(--vds-button-height-md); padding: 0 var(--vds-button-padding-x-md);
+  font: inherit; font-size: var(--vds-button-font-size-md); font-weight: var(--vds-button-font-weight);
+  border: 1px solid transparent; border-radius: var(--vds-button-radius);
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background var(--vds-motion-duration-fast), box-shadow var(--vds-motion-duration-fast);
+}
+.vds-button--sm { height: var(--vds-button-height-sm); padding: 0 var(--vds-button-padding-x-sm); font-size: var(--vds-button-font-size-sm); }
+.vds-button--lg { height: var(--vds-button-height-lg); padding: 0 var(--vds-button-padding-x-lg); font-size: var(--vds-button-font-size-lg); }
+.vds-button--icon { padding: 0; aspect-ratio: 1; }
+.vds-button--block { display: flex; width: 100%; }
+
+.vds-button--primary   { background: var(--vds-button-primary-bg);   color: var(--vds-button-primary-fg);   border-color: var(--vds-button-primary-border); }
+.vds-button--secondary { background: var(--vds-button-secondary-bg); color: var(--vds-button-secondary-fg); border-color: var(--vds-button-secondary-border); }
+.vds-button--ghost     { background: var(--vds-button-ghost-bg);     color: var(--vds-button-ghost-fg);     border-color: var(--vds-button-ghost-border); }
+.vds-button--danger    { background: var(--vds-button-danger-bg);    color: var(--vds-button-danger-fg);    border-color: var(--vds-button-danger-border); }
+.vds-button--primary:hover   { background: var(--vds-button-primary-bg-hover); }
+.vds-button--secondary:hover { background: var(--vds-button-secondary-bg-hover); }
+.vds-button--ghost:hover     { background: var(--vds-button-ghost-bg-hover); }
+.vds-button--danger:hover    { background: var(--vds-button-danger-bg-hover); }
+
+.vds-button:disabled, .vds-button[aria-disabled='true'] { opacity: .5; cursor: not-allowed; pointer-events: none; }
+.vds-button.is-loading { position: relative; color: transparent; }
+.vds-button.is-loading::after {
+  content: ''; position: absolute; width: 1.1em; height: 1.1em; border-radius: 50%;
+  border: 2px solid var(--vds-button-primary-fg); border-top-color: transparent; animation: vds-spin .7s linear infinite;
+}
+.vds-button--secondary.is-loading::after, .vds-button--ghost.is-loading::after { border-color: var(--vds-button-secondary-fg); border-top-color: transparent; }
+@keyframes vds-spin { to { transform: rotate(360deg); } }

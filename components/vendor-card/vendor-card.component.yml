@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Vendor card
+status: stable
+description: Vendor summary in listings. Flutter parity - VdsVendorCard.
+props:
+  type: object
+  properties:
+    name: { type: string }
+    href: { type: string }
+    image: { type: string, description: 'Cover image URL.' }
+    logo: { type: string }
+    category: { type: string }
+    location: { type: string }
+    distance: { type: string, description: 'Pre-formatted, e.g. "2.4 km".' }
+    rating: { type: number }
+    review_count: { type: integer }
+    verified: { type: boolean, default: false }
+    featured: { type: boolean, default: false }
+    open_now: { type: boolean }
+    orientation: { type: string, enum: [vertical, horizontal], default: vertical }
+    loading: { type: boolean, default: false, description: 'Skeleton placeholder.' }

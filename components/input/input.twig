@@ -1,0 +1,8 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set field_id = id|default('vds-input-' ~ name|default('field')) %}
+<div{{ attrs.addClass(error ? ['vds-input', 'has-error'] : ['vds-input']) }}>
+  {% if label %}<label class="vds-input__label" for="{{ field_id }}">{{ label }}{% if required %}<span aria-hidden="true"> *</span>{% endif %}</label>{% endif %}
+  <input class="vds-input__control" id="{{ field_id }}" name="{{ name }}" type="{{ type|default('text') }}" value="{{ value }}" placeholder="{{ placeholder }}"{% if required %} required{% endif %}{% if disabled %} disabled{% endif %}{% if error %} aria-invalid="true" aria-describedby="{{ field_id }}-msg"{% elseif help %} aria-describedby="{{ field_id }}-msg"{% endif %}>
+  {% if error %}<p class="vds-input__msg vds-input__msg--error" id="{{ field_id }}-msg">{{ error }}</p>
+  {% elseif help %}<p class="vds-input__msg" id="{{ field_id }}-msg">{{ help }}</p>{% endif %}
+</div>

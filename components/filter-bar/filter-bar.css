@@ -1,0 +1,4 @@
+.vds-filter-bar { display: flex; align-items: center; justify-content: space-between; gap: var(--vds-space-4); flex-wrap: wrap; }
+.vds-filter-bar__chips { display: flex; gap: var(--vds-space-2); overflow-x: auto; padding-block: var(--vds-space-1); }
+.vds-filter-bar__meta { display: flex; align-items: center; gap: var(--vds-space-3); }
+.vds-filter-bar__count { font-size: var(--vds-font-size-sm); color: var(--vds-color-text-muted); }

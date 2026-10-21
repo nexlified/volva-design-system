@@ -1,0 +1,6 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set variant = variant|default('default') %}
+{% set classes = ['vds-map-pin', 'vds-map-pin--' ~ variant] %}
+{% if active %}{% set classes = classes|merge(['is-active']) %}{% endif %}
+{% if visited %}{% set classes = classes|merge(['is-visited']) %}{% endif %}
+<button{{ attrs.addClass(classes) }} type="button"{% if active %} aria-pressed="true"{% endif %}>{{ label }}</button>

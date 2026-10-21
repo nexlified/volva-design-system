@@ -1,0 +1,14 @@
+{% set attrs = attributes ?: create_attribute() %}
+<header{{ attrs.addClass(['vds-site-header']) }}>
+  <div class="vds-site-header__inner">
+    <a class="vds-site-header__brand" href="{{ home_href|default('/') }}">{{ site_name|default('Volva') }}</a>
+    <nav class="vds-site-header__nav" aria-label="Primary">
+      {% for item in nav %}<a href="{{ item.href }}"{% if item.active %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+    </nav>
+    {% if show_search|default(true) %}<div class="vds-site-header__search">{% include 'volva_ds:search-bar' with { show_location: false, placeholder: 'Search' } only %}</div>{% endif %}
+    <div class="vds-site-header__actions">
+      {% if signed_in %}{% include 'volva_ds:avatar' with { initials: 'AB', size: 'sm' } only %}
+      {% else %}{% include 'volva_ds:button' with { label: 'Sign in', variant: 'ghost', size: 'sm' } only %}{% include 'volva_ds:button' with { label: 'List your business', size: 'sm' } only %}{% endif %}
+    </div>
+  </div>
+</header>

@@ -1,0 +1,10 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Rating
+status: stable
+description: Star rating with optional review count. Flutter parity - VdsRating.
+props:
+  type: object
+  properties:
+    value: { type: number, minimum: 0, maximum: 5 }
+    count: { type: integer, description: 'Number of reviews.' }
+    compact: { type: boolean, default: false, description: 'Single star + number.' }

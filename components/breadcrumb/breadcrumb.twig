@@ -1,0 +1,8 @@
+{% set attrs = attributes ?: create_attribute() %}
+<nav{{ attrs.addClass(['vds-breadcrumb']) }} aria-label="Breadcrumb">
+  <ol>
+    {% for item in items %}
+      <li>{% if item.href and not loop.last %}<a href="{{ item.href }}">{{ item.label }}</a>{% else %}<span{% if loop.last %} aria-current="page"{% endif %}>{{ item.label }}</span>{% endif %}</li>
+    {% endfor %}
+  </ol>
+</nav>

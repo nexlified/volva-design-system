@@ -1,0 +1,10 @@
+{% set attrs = attributes ?: create_attribute() %}
+<article{{ attrs.addClass(['vds-map-popup']) }}>
+  {% if image %}<img class="vds-map-popup__img" src="{{ image }}" alt="" loading="lazy">{% endif %}
+  <div class="vds-map-popup__body">
+    <h3 class="vds-map-popup__title"><a href="{{ href|default('#') }}">{{ title }}</a></h3>
+    {% if subtitle %}<p class="vds-map-popup__sub">{{ subtitle }}</p>{% endif %}
+    {% if rating is defined and rating is not null %}{% include 'volva_ds:rating' with { value: rating, count: review_count, compact: true } only %}{% endif %}
+    {% if price %}<strong>{{ price }}</strong>{% endif %}
+  </div>
+</article>

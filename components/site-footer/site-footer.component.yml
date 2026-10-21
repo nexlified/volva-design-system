@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Site footer
+status: stable
+description: Global footer with link columns. Web only.
+props:
+  type: object
+  properties:
+    site_name: { type: string, default: Volva }
+    tagline: { type: string }
+    columns:
+      type: array
+      items:
+        type: object
+        properties:
+          title: { type: string }
+          links: { type: array, items: { type: object, properties: { label: { type: string }, href: { type: string } } } }
+    copyright: { type: string }

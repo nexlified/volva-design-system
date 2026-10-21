@@ -1,0 +1,10 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Image gallery
+status: stable
+description: Primary image with thumbnail strip. Flutter parity - VdsImageGallery (PageView).
+props:
+  type: object
+  properties:
+    images:
+      type: array
+      items: { type: object, properties: { src: { type: string }, alt: { type: string } } }

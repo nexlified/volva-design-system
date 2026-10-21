@@ -1,0 +1,8 @@
+.vds-avatar {
+  --_size: 40px; display: inline-flex; align-items: center; justify-content: center; flex: none; overflow: hidden;
+  width: var(--_size); height: var(--_size); background: var(--vds-color-brand-subtle); color: var(--vds-color-brand-hover);
+  font-weight: var(--vds-font-weight-semibold); font-size: calc(var(--_size) * .38); border: 1px solid var(--vds-color-border-default);
+}
+.vds-avatar--sm { --_size: 28px; } .vds-avatar--lg { --_size: 56px; } .vds-avatar--xl { --_size: 96px; }
+.vds-avatar--circle { border-radius: var(--vds-radius-full); } .vds-avatar--square { border-radius: var(--vds-radius-lg); }
+.vds-avatar img { width: 100%; height: 100%; object-fit: cover; }

@@ -1,0 +1,10 @@
+{% set attrs = attributes ?: create_attribute() %}
+<section{{ attrs.addClass(['vds-contact-card']) }} aria-label="Contact">
+  <dl class="vds-contact-card__list">
+    {% if hours %}<div><dt>Hours</dt><dd>{% if open_now is not null and open_now is defined %}{% include 'volva_ds:badge' with { label: open_now ? 'Open' : 'Closed', tone: open_now ? 'success' : 'danger' } only %} {% endif %}{{ hours }}</dd></div>{% endif %}
+    {% if address %}<div><dt>Address</dt><dd>{{ address }}</dd></div>{% endif %}
+    {% if phone %}<div><dt>Phone</dt><dd><a href="tel:{{ phone|replace({' ': ''}) }}">{{ phone }}</a></dd></div>{% endif %}
+    {% if website %}<div><dt>Website</dt><dd><a href="{{ website }}" rel="noopener">{{ website|replace({'https://': '', 'http://': ''}) }}</a></dd></div>{% endif %}
+  </dl>
+  {% include 'volva_ds:button' with { label: cta_label|default('Send enquiry'), href: cta_href|default('#'), size: 'lg', full_width: true } only %}
+</section>

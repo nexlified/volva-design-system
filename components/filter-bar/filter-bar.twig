@@ -1,0 +1,10 @@
+{% set attrs = attributes ?: create_attribute() %}
+<div{{ attrs.addClass(['vds-filter-bar']) }}>
+  <div class="vds-filter-bar__chips" role="group" aria-label="Filters">
+    {% for f in filters %}{% include 'volva_ds:chip' with f only %}{% endfor %}
+  </div>
+  <div class="vds-filter-bar__meta">
+    {% if result_count is defined and result_count is not null %}<span class="vds-filter-bar__count">{{ result_count }} results</span>{% endif %}
+    {% include 'volva_ds:button' with { label: sort_label|default('Sort by relevance'), variant: 'ghost', size: 'sm' } only %}
+  </div>
+</div>

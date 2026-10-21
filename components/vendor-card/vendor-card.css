@@ -1,0 +1,25 @@
+.vds-vendor-card {
+  position: relative; display: flex; flex-direction: column; overflow: hidden;
+  background: var(--vds-card-bg); border: 1px solid var(--vds-card-border); border-radius: var(--vds-card-radius);
+  box-shadow: var(--vds-card-shadow); transition: box-shadow var(--vds-motion-duration-base);
+}
+.vds-vendor-card:hover, .vds-vendor-card:focus-within { box-shadow: var(--vds-card-shadow-hover); }
+.vds-vendor-card__media { position: relative; aspect-ratio: 16 / 9; background: var(--vds-color-surface-muted); }
+.vds-vendor-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.vds-vendor-card__flag { position: absolute; top: var(--vds-space-3); left: var(--vds-space-3); }
+.vds-vendor-card__body { display: flex; flex-direction: column; gap: var(--vds-space-2); padding: var(--vds-card-padding); flex: 1; }
+.vds-vendor-card__head { display: flex; gap: var(--vds-space-3); align-items: center; }
+.vds-vendor-card__title { font-size: var(--vds-font-size-lg); }
+.vds-vendor-card__link { color: inherit; text-decoration: none; }
+.vds-vendor-card__link::after { content: ''; position: absolute; inset: 0; } /* whole card clickable */
+.vds-vendor-card__meta { margin: 0; font-size: var(--vds-font-size-sm); color: var(--vds-color-text-muted); }
+.vds-vendor-card__badges { display: flex; gap: var(--vds-space-2); flex-wrap: wrap; }
+.vds-vendor-card--horizontal { flex-direction: row; }
+.vds-vendor-card--horizontal .vds-vendor-card__media { width: 40%; max-width: 280px; aspect-ratio: auto; flex: none; }
+@media (max-width: 639px) { .vds-vendor-card--horizontal { flex-direction: column; } .vds-vendor-card--horizontal .vds-vendor-card__media { width: 100%; max-width: none; aspect-ratio: 16 / 9; } }
+
+/* Shared skeleton primitives (also used by product-card). */
+.vds-skeleton-line { display: block; height: 14px; border-radius: var(--vds-radius-sm); background: linear-gradient(90deg, var(--vds-color-surface-muted), var(--vds-color-surface-subtle), var(--vds-color-surface-muted)); background-size: 200% 100%; animation: vds-shimmer 1.4s infinite; }
+.vds-skeleton-line--short { width: 55%; }
+.is-skeleton .vds-vendor-card__media, .is-skeleton .vds-product-card__media { animation: vds-shimmer 1.4s infinite; background: linear-gradient(90deg, var(--vds-color-surface-muted), var(--vds-color-surface-subtle), var(--vds-color-surface-muted)); background-size: 200% 100%; }
+@keyframes vds-shimmer { to { background-position: -200% 0; } }

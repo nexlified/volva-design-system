@@ -1,0 +1,22 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set classes = ['vds-product-card', 'vds-product-card--' ~ orientation|default('vertical')] %}
+{% if loading %}
+<article{{ attrs.addClass(classes|merge(['is-skeleton'])) }} aria-hidden="true">
+  <div class="vds-product-card__media"></div>
+  <div class="vds-product-card__body"><span class="vds-skeleton-line"></span><span class="vds-skeleton-line vds-skeleton-line--short"></span></div>
+</article>
+{% else %}
+<article{{ attrs.addClass(available is same as(false) ? classes|merge(['is-unavailable']) : classes) }}>
+  <div class="vds-product-card__media">
+    {% if image %}<img src="{{ image }}" alt="" loading="lazy">{% endif %}
+    {% if badge %}<span class="vds-product-card__flag">{% include 'volva_ds:badge' with { label: badge, tone: badge_tone|default('brand') } only %}</span>{% endif %}
+    {% if available is same as(false) %}<span class="vds-product-card__flag vds-product-card__flag--right">{% include 'volva_ds:badge' with { label: 'Unavailable', tone: 'neutral' } only %}</span>{% endif %}
+  </div>
+  <div class="vds-product-card__body">
+    {% if vendor_name %}<p class="vds-product-card__vendor">{{ vendor_name }}</p>{% endif %}
+    <h3 class="vds-product-card__title"><a class="vds-product-card__link" href="{{ href|default('#') }}">{{ title }}</a></h3>
+    {% if rating is defined and rating is not null %}{% include 'volva_ds:rating' with { value: rating, count: review_count, compact: true } only %}{% endif %}
+    {% include 'volva_ds:price' with { amount: price, compare_at: compare_at, unit: unit, on_request: on_request } only %}
+  </div>
+</article>
+{% endif %}

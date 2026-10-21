@@ -1,0 +1,7 @@
+# Global config: design tokens (CSS custom properties) + base styles. Component CSS is attached
+# automatically by SDC when a component is rendered, so it is not listed here.
+global:
+  css:
+    base:
+      dist/css/tokens.css: {}
+      styles/base.css: {}

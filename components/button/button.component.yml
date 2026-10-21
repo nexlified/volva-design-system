@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Button
+status: stable
+description: Action or link button. Flutter parity - VdsButton.
+props:
+  type: object
+  properties:
+    label: { type: string, title: Label }
+    variant: { type: string, enum: [primary, secondary, ghost, danger], default: primary }
+    size: { type: string, enum: [sm, md, lg], default: md }
+    href: { type: string, title: Link URL (renders <a> when set) }
+    type: { type: string, enum: [button, submit, reset], default: button }
+    disabled: { type: boolean, default: false }
+    loading: { type: boolean, default: false }
+    icon_only: { type: boolean, default: false, description: 'Square button; label becomes the aria-label.' }
+    full_width: { type: boolean, default: false }
+slots:
+  content: { title: Content, description: 'Overrides the label (e.g. icon + text).' }

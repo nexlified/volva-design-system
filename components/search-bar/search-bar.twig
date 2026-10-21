@@ -1,0 +1,10 @@
+{% set attrs = attributes ?: create_attribute() %}
+<form{{ attrs.addClass(['vds-search-bar', 'vds-search-bar--' ~ size|default('md')]) }} action="{{ action|default('/search') }}" method="get" role="search">
+  <label class="vds-visually-hidden" for="vds-sb-q">Search</label>
+  <input class="vds-search-bar__field" id="vds-sb-q" type="search" name="q" value="{{ query }}" placeholder="{{ placeholder|default('Search vendors and products') }}">
+  {% if show_location|default(true) %}
+    <label class="vds-visually-hidden" for="vds-sb-loc">Location</label>
+    <input class="vds-search-bar__field vds-search-bar__field--location" id="vds-sb-loc" type="text" name="location" value="{{ location }}" placeholder="Location">
+  {% endif %}
+  {% include 'volva_ds:button' with { label: 'Search', type: 'submit', size: size|default('md') } only %}
+</form>

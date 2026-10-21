@@ -1,0 +1,4 @@
+.vds-contact-card { display: flex; flex-direction: column; gap: var(--vds-space-4); padding: var(--vds-card-padding); background: var(--vds-card-bg); border: 1px solid var(--vds-card-border); border-radius: var(--vds-card-radius); }
+.vds-contact-card__list { display: grid; gap: var(--vds-space-3); margin: 0; }
+.vds-contact-card__list dt { font-size: var(--vds-font-size-xs); text-transform: uppercase; letter-spacing: .04em; color: var(--vds-color-text-subtle); }
+.vds-contact-card__list dd { margin: 0; }

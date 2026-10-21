@@ -1,0 +1,14 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Contact card
+status: stable
+description: Vendor contact block - address, hours, phone, primary CTA. Flutter parity - VdsContactCard.
+props:
+  type: object
+  properties:
+    address: { type: string }
+    phone: { type: string }
+    website: { type: string }
+    hours: { type: string, description: 'Summary, e.g. "Open · closes 18:00".' }
+    open_now: { type: boolean }
+    cta_label: { type: string, default: Send enquiry }
+    cta_href: { type: string }

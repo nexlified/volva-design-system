@@ -1,0 +1,12 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Avatar
+status: stable
+description: Vendor logo / person image with initials fallback. Flutter parity - VdsAvatar.
+props:
+  type: object
+  properties:
+    src: { type: string }
+    alt: { type: string }
+    initials: { type: string, description: 'Fallback when src is empty.' }
+    size: { type: string, enum: [sm, md, lg, xl], default: md }
+    shape: { type: string, enum: [circle, square], default: circle }

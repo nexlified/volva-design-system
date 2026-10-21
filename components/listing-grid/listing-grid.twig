@@ -1,0 +1,4 @@
+{% set attrs = attributes ?: create_attribute() %}
+<div{{ attrs.addClass(['vds-listing-grid', 'vds-listing-grid--' ~ layout|default('grid')]).setAttribute('style', '--vds-grid-min: ' ~ min_column|default('260px')) }}>
+  {% block items %}{{ items }}{% endblock %}
+</div>

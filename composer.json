@@ -1,0 +1,9 @@
+{
+  "name": "volva/volva_ds",
+  "description": "Volva design system base theme (Twig SDC components + design tokens).",
+  "type": "drupal-theme",
+  "license": "proprietary",
+  "require": {
+    "composer/installers": "^2.0"
+  }
+}

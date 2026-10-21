@@ -1,0 +1,13 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Search bar
+status: stable
+description: Keyword + optional location search. Flutter parity - VdsSearchBar.
+props:
+  type: object
+  properties:
+    action: { type: string, default: /search }
+    query: { type: string }
+    location: { type: string }
+    placeholder: { type: string, default: Search vendors and products }
+    show_location: { type: boolean, default: true }
+    size: { type: string, enum: [md, lg], default: md }

@@ -1,0 +1,14 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Site header
+status: stable
+description: Global header with logo, nav, search and account actions. Web only.
+props:
+  type: object
+  properties:
+    site_name: { type: string, default: Volva }
+    home_href: { type: string, default: / }
+    nav:
+      type: array
+      items: { type: object, properties: { label: { type: string }, href: { type: string }, active: { type: boolean } } }
+    show_search: { type: boolean, default: true }
+    signed_in: { type: boolean, default: false }

@@ -1,0 +1,11 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Empty state
+status: stable
+description: No results / error placeholder with optional action. Flutter parity - VdsEmptyState.
+props:
+  type: object
+  properties:
+    title: { type: string }
+    description: { type: string }
+    action_label: { type: string }
+    action_href: { type: string }

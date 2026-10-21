@@ -1,0 +1,10 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Pagination
+status: stable
+description: Page navigation. Flutter apps typically use infinite scroll; this is a web-only component.
+props:
+  type: object
+  properties:
+    current: { type: integer, default: 1 }
+    total: { type: integer }
+    base_url: { type: string, default: "?page=" }

@@ -1,0 +1,11 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Listing grid
+status: stable
+description: Responsive grid / list wrapper for cards. Flutter parity - SliverGrid / ListView in the host screen.
+props:
+  type: object
+  properties:
+    layout: { type: string, enum: [grid, list], default: grid }
+    min_column: { type: string, default: 260px, description: 'Minimum card width before wrapping.' }
+slots:
+  items: { title: Items, description: 'Cards (vendor-card / product-card).' }
