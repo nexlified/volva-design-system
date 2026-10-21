@@ -1,0 +1,45 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-vds-theme="dusk"] {
+  --vds-palette-brand-50: #f1f2f7;
+  --vds-palette-brand-100: #e2e5ee;
+  --vds-palette-brand-200: #c9cedd;
+  --vds-palette-brand-300: #98a1bc;
+  --vds-palette-brand-400: #7a84a4;
+  --vds-palette-brand-500: #656a8c;
+  --vds-palette-brand-600: #555879;
+  --vds-palette-brand-700: #444664;
+  --vds-palette-brand-800: #363853;
+  --vds-palette-brand-900: #292b40;
+  --vds-palette-neutral-50: #faf5e9;
+  --vds-palette-neutral-100: #f4ebd3;
+  --vds-palette-neutral-200: #ded3c4;
+  --vds-color-brand-default: var(--vds-palette-brand-600);
+  --vds-color-brand-hover: var(--vds-palette-brand-700);
+  --vds-color-brand-active: var(--vds-palette-brand-800);
+  --vds-color-brand-subtle: var(--vds-palette-brand-50);
+  --vds-color-surface-subtle: var(--vds-palette-neutral-50);
+  --vds-color-surface-muted: var(--vds-palette-neutral-100);
+  --vds-color-text-link: var(--vds-palette-brand-700);
+  --vds-color-border-default: var(--vds-palette-neutral-200);
+  --vds-color-border-focus: var(--vds-palette-brand-500);
+  --vds-badge-neutral-bg: var(--vds-color-surface-muted);
+  --vds-badge-brand-bg: var(--vds-color-brand-subtle);
+  --vds-badge-brand-fg: var(--vds-color-brand-hover);
+  --vds-button-primary-bg: var(--vds-color-brand-default);
+  --vds-button-primary-bg-hover: var(--vds-color-brand-hover);
+  --vds-button-primary-border: var(--vds-color-brand-default);
+  --vds-button-secondary-bg-hover: var(--vds-color-surface-muted);
+  --vds-button-ghost-bg-hover: var(--vds-color-brand-subtle);
+  --vds-button-ghost-fg: var(--vds-color-brand-default);
+  --vds-card-border: var(--vds-color-border-default);
+  --vds-chip-bg-active: var(--vds-color-brand-subtle);
+  --vds-chip-fg-active: var(--vds-color-brand-hover);
+  --vds-chip-border-active: var(--vds-color-brand-default);
+  --vds-choice-checked-bg: var(--vds-color-brand-default);
+  --vds-input-border-focus: var(--vds-color-border-focus);
+  --vds-map-pin-bg-active: var(--vds-color-brand-default);
+  --vds-map-cluster-bg: var(--vds-color-brand-default);
+}

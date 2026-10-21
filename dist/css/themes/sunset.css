@@ -1,0 +1,45 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-vds-theme="sunset"] {
+  --vds-palette-brand-50: #f9eff4;
+  --vds-palette-brand-100: #f4dfe9;
+  --vds-palette-brand-200: #e3afc9;
+  --vds-palette-brand-300: #e98baa;
+  --vds-palette-brand-400: #ee5e80;
+  --vds-palette-brand-500: #e8305c;
+  --vds-palette-brand-600: #e11a45;
+  --vds-palette-brand-700: #b8143a;
+  --vds-palette-brand-800: #911131;
+  --vds-palette-brand-900: #700d26;
+  --vds-palette-neutral-50: #f8f6ea;
+  --vds-palette-neutral-100: #efecd7;
+  --vds-palette-warning-500: #edc92c;
+  --vds-color-brand-default: var(--vds-palette-brand-600);
+  --vds-color-brand-hover: var(--vds-palette-brand-700);
+  --vds-color-brand-active: var(--vds-palette-brand-800);
+  --vds-color-brand-subtle: var(--vds-palette-brand-50);
+  --vds-color-surface-subtle: var(--vds-palette-neutral-50);
+  --vds-color-surface-muted: var(--vds-palette-neutral-100);
+  --vds-color-text-link: var(--vds-palette-brand-700);
+  --vds-color-border-focus: var(--vds-palette-brand-500);
+  --vds-color-rating: var(--vds-palette-warning-500);
+  --vds-badge-neutral-bg: var(--vds-color-surface-muted);
+  --vds-badge-brand-bg: var(--vds-color-brand-subtle);
+  --vds-badge-brand-fg: var(--vds-color-brand-hover);
+  --vds-button-primary-bg: var(--vds-color-brand-default);
+  --vds-button-primary-bg-hover: var(--vds-color-brand-hover);
+  --vds-button-primary-border: var(--vds-color-brand-default);
+  --vds-button-secondary-bg-hover: var(--vds-color-surface-muted);
+  --vds-button-ghost-bg-hover: var(--vds-color-brand-subtle);
+  --vds-button-ghost-fg: var(--vds-color-brand-default);
+  --vds-chip-bg-active: var(--vds-color-brand-subtle);
+  --vds-chip-fg-active: var(--vds-color-brand-hover);
+  --vds-chip-border-active: var(--vds-color-brand-default);
+  --vds-choice-checked-bg: var(--vds-color-brand-default);
+  --vds-input-border-focus: var(--vds-color-border-focus);
+  --vds-map-pin-bg-active: var(--vds-color-brand-default);
+  --vds-map-cluster-bg: var(--vds-color-brand-default);
+  --vds-rating-star-filled: var(--vds-color-rating);
+}

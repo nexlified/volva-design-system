@@ -1,0 +1,36 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-vds-theme="plum"] {
+  --vds-palette-brand-50: #faf5ff;
+  --vds-palette-brand-100: #f3e8ff;
+  --vds-palette-brand-200: #e5d0fb;
+  --vds-palette-brand-300: #d0a9f5;
+  --vds-palette-brand-400: #b77aea;
+  --vds-palette-brand-500: #9d4fd9;
+  --vds-palette-brand-600: #83359f;
+  --vds-palette-brand-700: #6b2a82;
+  --vds-palette-brand-800: #562268;
+  --vds-palette-brand-900: #431b52;
+  --vds-color-brand-default: var(--vds-palette-brand-600);
+  --vds-color-brand-hover: var(--vds-palette-brand-700);
+  --vds-color-brand-active: var(--vds-palette-brand-800);
+  --vds-color-brand-subtle: var(--vds-palette-brand-50);
+  --vds-color-text-link: var(--vds-palette-brand-700);
+  --vds-color-border-focus: var(--vds-palette-brand-500);
+  --vds-badge-brand-bg: var(--vds-color-brand-subtle);
+  --vds-badge-brand-fg: var(--vds-color-brand-hover);
+  --vds-button-primary-bg: var(--vds-color-brand-default);
+  --vds-button-primary-bg-hover: var(--vds-color-brand-hover);
+  --vds-button-primary-border: var(--vds-color-brand-default);
+  --vds-button-ghost-bg-hover: var(--vds-color-brand-subtle);
+  --vds-button-ghost-fg: var(--vds-color-brand-default);
+  --vds-chip-bg-active: var(--vds-color-brand-subtle);
+  --vds-chip-fg-active: var(--vds-color-brand-hover);
+  --vds-chip-border-active: var(--vds-color-brand-default);
+  --vds-choice-checked-bg: var(--vds-color-brand-default);
+  --vds-input-border-focus: var(--vds-color-border-focus);
+  --vds-map-pin-bg-active: var(--vds-color-brand-default);
+  --vds-map-cluster-bg: var(--vds-color-brand-default);
+}

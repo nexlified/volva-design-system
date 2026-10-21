@@ -1,0 +1,36 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-vds-theme="ocean"] {
+  --vds-palette-brand-50: #eff8ff;
+  --vds-palette-brand-100: #dbeefe;
+  --vds-palette-brand-200: #b8ddfc;
+  --vds-palette-brand-300: #7cc3f8;
+  --vds-palette-brand-400: #3aa5ef;
+  --vds-palette-brand-500: #1288db;
+  --vds-palette-brand-600: #0a6db8;
+  --vds-palette-brand-700: #0b5994;
+  --vds-palette-brand-800: #0e4977;
+  --vds-palette-brand-900: #0f3d61;
+  --vds-color-brand-default: var(--vds-palette-brand-600);
+  --vds-color-brand-hover: var(--vds-palette-brand-700);
+  --vds-color-brand-active: var(--vds-palette-brand-800);
+  --vds-color-brand-subtle: var(--vds-palette-brand-50);
+  --vds-color-text-link: var(--vds-palette-brand-700);
+  --vds-color-border-focus: var(--vds-palette-brand-500);
+  --vds-badge-brand-bg: var(--vds-color-brand-subtle);
+  --vds-badge-brand-fg: var(--vds-color-brand-hover);
+  --vds-button-primary-bg: var(--vds-color-brand-default);
+  --vds-button-primary-bg-hover: var(--vds-color-brand-hover);
+  --vds-button-primary-border: var(--vds-color-brand-default);
+  --vds-button-ghost-bg-hover: var(--vds-color-brand-subtle);
+  --vds-button-ghost-fg: var(--vds-color-brand-default);
+  --vds-chip-bg-active: var(--vds-color-brand-subtle);
+  --vds-chip-fg-active: var(--vds-color-brand-hover);
+  --vds-chip-border-active: var(--vds-color-brand-default);
+  --vds-choice-checked-bg: var(--vds-color-brand-default);
+  --vds-input-border-focus: var(--vds-color-border-focus);
+  --vds-map-pin-bg-active: var(--vds-color-brand-default);
+  --vds-map-cluster-bg: var(--vds-color-brand-default);
+}
