@@ -1,4 +1,5 @@
 // Single token source (tokens/**) -> CSS vars for Drupal/Storybook, Dart for Flutter, JSON for reference.
+import { readdirSync } from 'node:fs';
 import StyleDictionary from 'style-dictionary';
 
 const PREFIX = 'vds';
@@ -78,3 +79,29 @@ const sd = new StyleDictionary({
 });
 
 await sd.buildAllPlatforms();
+
+// Colour themes: themes/<name>.json overrides the brand ramp. Each theme is built against the full token set and
+// emits only the tokens whose value changed (brand ramp + everything derived from it), scoped to [data-vds-theme].
+// Semantic/component vars must be re-declared per scope because var() aliases resolve where they are declared.
+const baseValues = new Map((await sd.getPlatformTokens('css')).allTokens.map((t) => [t.name, t.$value]));
+for (const file of readdirSync('themes').filter((f) => f.endsWith('.json'))) {
+  const theme = file.replace(/\.json$/, '');
+  const themed = new StyleDictionary({
+    source: ['tokens/**/*.json', `themes/${file}`], // theme file intentionally redefines palette.brand.*
+    log: { warnings: 'disabled' },
+    platforms: {
+      css: {
+        transformGroup: 'css',
+        prefix: PREFIX,
+        buildPath: 'dist/css/themes/',
+        files: [{
+          destination: `${theme}.css`,
+          format: 'css/variables',
+          filter: (t) => baseValues.get(t.name) !== t.$value,
+          options: { outputReferences: true, selector: `[data-vds-theme="${theme}"]` },
+        }],
+      },
+    },
+  });
+  await themed.buildPlatform('css');
+}

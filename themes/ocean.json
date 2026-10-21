@@ -1,0 +1,17 @@
+{
+  "palette": {
+    "brand": {
+      "$type": "color",
+      "50": { "$value": "#EFF8FF" },
+      "100": { "$value": "#DBEEFE" },
+      "200": { "$value": "#B8DDFC" },
+      "300": { "$value": "#7CC3F8" },
+      "400": { "$value": "#3AA5EF" },
+      "500": { "$value": "#1288DB" },
+      "600": { "$value": "#0A6DB8" },
+      "700": { "$value": "#0B5994" },
+      "800": { "$value": "#0E4977" },
+      "900": { "$value": "#0F3D61" }
+    }
+  }
+}
