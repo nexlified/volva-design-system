@@ -7,6 +7,8 @@
   --vds-button-height-md: 40px;
   --vds-button-height-lg: 48px;
   --vds-chip-height: 32px;
+  --vds-choice-size: 20px;
+  --vds-choice-switch-width: 40px;
   --vds-input-height: 44px;
   --vds-map-pin-height: 32px;
   --vds-map-cluster-size: 44px;
@@ -116,6 +118,7 @@
   --vds-chip-padding-x: var(--vds-space-3);
   --vds-chip-radius: var(--vds-radius-full);
   --vds-chip-font-size: var(--vds-font-size-sm);
+  --vds-choice-radius: var(--vds-radius-sm);
   --vds-input-radius: var(--vds-radius-md);
   --vds-input-padding-x: var(--vds-space-4);
   --vds-input-font-size: var(--vds-font-size-md);
@@ -178,6 +181,10 @@
   --vds-chip-bg-active: var(--vds-color-brand-subtle);
   --vds-chip-fg-active: var(--vds-color-brand-hover);
   --vds-chip-border-active: var(--vds-color-brand-default);
+  --vds-choice-bg: var(--vds-color-surface-default);
+  --vds-choice-border: var(--vds-color-border-strong);
+  --vds-choice-checked-bg: var(--vds-color-brand-default);
+  --vds-choice-checked-fg: var(--vds-color-brand-on);
   --vds-input-bg: var(--vds-color-surface-default);
   --vds-input-fg: var(--vds-color-text-default);
   --vds-input-placeholder: var(--vds-color-text-subtle);

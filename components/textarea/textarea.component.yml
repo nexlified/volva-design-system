@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Textarea
+status: stable
+description: Labelled multi-line text field with help / error text.
+props:
+  type: object
+  properties:
+    id: { type: string }
+    name: { type: string }
+    label: { type: string }
+    value: { type: string }
+    placeholder: { type: string }
+    rows: { type: integer, default: 4 }
+    help: { type: string }
+    error: { type: string }
+    required: { type: boolean, default: false }
+    disabled: { type: boolean, default: false }

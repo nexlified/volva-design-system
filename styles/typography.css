@@ -1,0 +1,28 @@
+/* Typography: element defaults + utility classes, driven only by global tokens. Attached with base.css. */
+h1, h2, h3, h4, h5, h6, .vds-h1, .vds-h2, .vds-h3, .vds-h4, .vds-h5, .vds-h6 {
+  font-family: var(--vds-font-family-display); font-weight: var(--vds-font-weight-bold); line-height: var(--vds-font-line-height-tight); margin: 0; color: var(--vds-color-text-default);
+}
+h1, .vds-h1 { font-size: var(--vds-font-size-4xl); }
+h2, .vds-h2 { font-size: var(--vds-font-size-3xl); }
+h3, .vds-h3 { font-size: var(--vds-font-size-2xl); font-weight: var(--vds-font-weight-semibold); }
+h4, .vds-h4 { font-size: var(--vds-font-size-xl);  font-weight: var(--vds-font-weight-semibold); }
+h5, .vds-h5 { font-size: var(--vds-font-size-lg);  font-weight: var(--vds-font-weight-semibold); }
+h6, .vds-h6 { font-size: var(--vds-font-size-md);  font-weight: var(--vds-font-weight-semibold); }
+
+p, .vds-body { margin: 0; font-size: var(--vds-font-size-md); line-height: var(--vds-font-line-height-relaxed); }
+.vds-lead { font-size: var(--vds-font-size-lg); line-height: var(--vds-font-line-height-relaxed); color: var(--vds-color-text-muted); }
+.vds-body-sm, small { font-size: var(--vds-font-size-sm); }
+.vds-caption { font-size: var(--vds-font-size-xs); color: var(--vds-color-text-muted); }
+.vds-overline { font-size: var(--vds-font-size-xs); font-weight: var(--vds-font-weight-semibold); letter-spacing: .08em; text-transform: uppercase; color: var(--vds-color-text-muted); }
+.vds-text-muted { color: var(--vds-color-text-muted); }
+* + p, p + p { margin-top: var(--vds-space-4); }
+
+a, .vds-link { color: var(--vds-color-text-link); text-decoration: underline; text-underline-offset: .2em; transition: color var(--vds-motion-duration-fast); }
+a:hover, .vds-link:hover { color: var(--vds-color-brand-active); }
+
+strong, b { font-weight: var(--vds-font-weight-semibold); }
+blockquote { margin: 0; padding-left: var(--vds-space-4); border-left: 3px solid var(--vds-color-border-strong); color: var(--vds-color-text-muted); }
+ul, ol { margin: 0; padding-left: var(--vds-space-6); line-height: var(--vds-font-line-height-relaxed); }
+code, kbd, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+code, kbd { padding: .1em .35em; background: var(--vds-color-surface-muted); border-radius: var(--vds-radius-sm); }
+hr { border: 0; border-top: 1px solid var(--vds-color-border-default); margin: var(--vds-space-6) 0; }

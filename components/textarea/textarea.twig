@@ -1,0 +1,8 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set field_id = id|default('vds-textarea-' ~ name|default('field')) %}
+<div{{ attrs.addClass(error ? ['vds-textarea', 'has-error'] : ['vds-textarea']) }}>
+  {% if label %}<label class="vds-textarea__label" for="{{ field_id }}">{{ label }}{% if required %}<span aria-hidden="true"> *</span>{% endif %}</label>{% endif %}
+  <textarea class="vds-textarea__control" id="{{ field_id }}" name="{{ name }}" rows="{{ rows|default(4) }}" placeholder="{{ placeholder }}"{% if required %} required{% endif %}{% if disabled %} disabled{% endif %}{% if error %} aria-invalid="true" aria-describedby="{{ field_id }}-msg"{% elseif help %} aria-describedby="{{ field_id }}-msg"{% endif %}>{{ value }}</textarea>
+  {% if error %}<p class="vds-textarea__msg vds-textarea__msg--error" id="{{ field_id }}-msg">{{ error }}</p>
+  {% elseif help %}<p class="vds-textarea__msg" id="{{ field_id }}-msg">{{ help }}</p>{% endif %}
+</div>

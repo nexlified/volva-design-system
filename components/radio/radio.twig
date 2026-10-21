@@ -1,0 +1,10 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set field_id = id|default('vds-radio-' ~ name|default('field') ~ (value ? '-' ~ value : '')) %}
+<div{{ attrs.addClass(error ? ['vds-radio', 'has-error'] : ['vds-radio']) }}>
+  <label class="vds-radio__row" for="{{ field_id }}">
+    <input class="vds-radio__control" type="radio" id="{{ field_id }}" name="{{ name }}"{% if value %} value="{{ value }}"{% endif %}{% if checked %} checked{% endif %}{% if disabled %} disabled{% endif %}{% if error %} aria-invalid="true" aria-describedby="{{ field_id }}-msg"{% elseif help %} aria-describedby="{{ field_id }}-msg"{% endif %}>
+    <span class="vds-radio__label">{{ label }}</span>
+  </label>
+  {% if error %}<p class="vds-radio__msg vds-radio__msg--error" id="{{ field_id }}-msg">{{ error }}</p>
+  {% elseif help %}<p class="vds-radio__msg" id="{{ field_id }}-msg">{{ help }}</p>{% endif %}
+</div>

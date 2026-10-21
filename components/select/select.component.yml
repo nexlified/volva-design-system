@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Select
+status: stable
+description: Labelled native dropdown with help / error text.
+props:
+  type: object
+  properties:
+    id: { type: string }
+    name: { type: string }
+    label: { type: string }
+    options:
+      type: array
+      items:
+        type: object
+        properties:
+          value: { type: string }
+          label: { type: string }
+    value: { type: string }
+    placeholder: { type: string }
+    help: { type: string }
+    error: { type: string }
+    required: { type: boolean, default: false }
+    disabled: { type: boolean, default: false }
