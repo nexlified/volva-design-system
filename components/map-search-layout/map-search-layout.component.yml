@@ -1,0 +1,13 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Map search layout
+status: stable
+description: Split view - results list + map canvas, with a mobile list/map toggle. Flutter parity - VdsMapSearchLayout (Stack + DraggableScrollableSheet).
+props:
+  type: object
+  properties:
+    view: { type: string, enum: [list, map], default: list, description: 'Active pane on small screens.' }
+    result_count: { type: integer }
+slots:
+  filters: { title: Filters }
+  results: { title: Results list }
+  map: { title: Map canvas, description: 'Host-provided (Leaflet / Google Maps / Mapbox).' }

@@ -1,0 +1,6 @@
+{% set attrs = attributes ?: create_attribute() %}
+<div{{ attrs.addClass(['vds-empty-state']) }}>
+  <h3 class="vds-empty-state__title">{{ title }}</h3>
+  {% if description %}<p class="vds-empty-state__text">{{ description }}</p>{% endif %}
+  {% if action_label %}{% include 'volva_ds:button' with { label: action_label, href: action_href, variant: 'secondary' } only %}{% endif %}
+</div>

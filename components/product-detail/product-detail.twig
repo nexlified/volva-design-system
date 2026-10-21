@@ -1,0 +1,23 @@
+{% set attrs = attributes ?: create_attribute() %}
+<article{{ attrs.addClass(['vds-product-detail']) }}>
+  <div class="vds-product-detail__gallery">{% include 'volva_ds:image-gallery' with { images: images } only %}</div>
+  <div class="vds-product-detail__info">
+    {% if badge %}{% include 'volva_ds:badge' with { label: badge, tone: 'brand' } only %}{% endif %}
+    <h1 class="vds-product-detail__title">{{ title }}</h1>
+    {% if rating is defined and rating is not null %}{% include 'volva_ds:rating' with { value: rating, count: review_count } only %}{% endif %}
+    {% include 'volva_ds:price' with { amount: price, compare_at: compare_at, on_request: on_request, size: 'lg' } only %}
+    {% if available is same as(false) %}{% include 'volva_ds:badge' with { label: 'Currently unavailable', tone: 'danger' } only %}{% endif %}
+    {% if description %}<p class="vds-product-detail__desc">{{ description }}</p>{% endif %}
+    {% if specs|length %}
+      <dl class="vds-product-detail__specs">{% for s in specs %}<div><dt>{{ s.label }}</dt><dd>{{ s.value }}</dd></div>{% endfor %}</dl>
+    {% endif %}
+    <div class="vds-product-detail__vendor">
+      {% include 'volva_ds:avatar' with { src: vendor_logo, initials: vendor_name|slice(0, 2)|upper, size: 'md', shape: 'square' } only %}
+      <div>
+        <a href="{{ vendor_href|default('#') }}"><strong>{{ vendor_name }}</strong></a>
+        {% if vendor_rating is defined and vendor_rating is not null %}<div>{% include 'volva_ds:rating' with { value: vendor_rating, compact: true } only %}</div>{% endif %}
+      </div>
+    </div>
+    {% include 'volva_ds:button' with { label: cta_label|default('Contact vendor'), size: 'lg', full_width: true, disabled: available is same as(false) } only %}
+  </div>
+</article>

@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Input
+status: stable
+description: Labelled text input with help / error text. Flutter parity - VdsInput.
+props:
+  type: object
+  properties:
+    id: { type: string }
+    name: { type: string }
+    label: { type: string }
+    type: { type: string, enum: [text, email, tel, search, number, password], default: text }
+    value: { type: string }
+    placeholder: { type: string }
+    help: { type: string }
+    error: { type: string }
+    required: { type: boolean, default: false }
+    disabled: { type: boolean, default: false }

@@ -1,0 +1,22 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Product card
+status: stable
+description: Product summary in listings. Flutter parity - VdsProductCard.
+props:
+  type: object
+  properties:
+    title: { type: string }
+    href: { type: string }
+    image: { type: string }
+    vendor_name: { type: string }
+    price: { type: string }
+    compare_at: { type: string }
+    unit: { type: string }
+    on_request: { type: boolean, default: false }
+    rating: { type: number }
+    review_count: { type: integer }
+    badge: { type: string, description: 'e.g. "New", "Sale".' }
+    badge_tone: { type: string, enum: [neutral, brand, success, warning, danger, info], default: brand }
+    available: { type: boolean, default: true }
+    orientation: { type: string, enum: [vertical, horizontal], default: vertical }
+    loading: { type: boolean, default: false }

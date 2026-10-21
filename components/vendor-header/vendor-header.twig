@@ -1,0 +1,22 @@
+{% set attrs = attributes ?: create_attribute() %}
+<header{{ attrs.addClass(['vds-vendor-header']) }}>
+  <div class="vds-vendor-header__cover">{% if cover %}<img src="{{ cover }}" alt="">{% endif %}</div>
+  <div class="vds-vendor-header__inner">
+    <div class="vds-vendor-header__logo">{% include 'volva_ds:avatar' with { src: logo, alt: name ~ ' logo', initials: name|slice(0, 2)|upper, size: 'xl', shape: 'square' } only %}</div>
+    <div class="vds-vendor-header__info">
+      <div class="vds-vendor-header__title-row">
+        <h1 class="vds-vendor-header__name">{{ name }}</h1>
+        {% if verified %}{% include 'volva_ds:badge' with { label: 'Verified', tone: 'brand' } only %}{% endif %}
+      </div>
+      {% if tagline %}<p class="vds-vendor-header__tagline">{{ tagline }}</p>{% endif %}
+      <p class="vds-vendor-header__meta">
+        {% if rating is defined and rating is not null %}{% include 'volva_ds:rating' with { value: rating, count: review_count } only %}{% endif %}
+        {% if category %}<span>{{ category }}</span>{% endif %}{% if location %}<span>{{ location }}</span>{% endif %}
+      </p>
+    </div>
+    <div class="vds-vendor-header__actions">
+      {% include 'volva_ds:button' with { label: secondary_label|default('Save'), variant: 'secondary' } only %}
+      {% include 'volva_ds:button' with { label: cta_label|default('Contact'), href: cta_href } only %}
+    </div>
+  </div>
+</header>

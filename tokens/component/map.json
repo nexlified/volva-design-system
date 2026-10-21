@@ -1,0 +1,20 @@
+{
+  "map": {
+    "pin": {
+      "bg": { "$type": "color", "$value": "{color.surface.default}" },
+      "fg": { "$type": "color", "$value": "{color.text.default}" },
+      "border": { "$type": "color", "$value": "{color.border.strong}" },
+      "bgActive": { "$type": "color", "$value": "{color.brand.default}" },
+      "fgActive": { "$type": "color", "$value": "{color.brand.on}" },
+      "height": { "$type": "dimension", "$value": "32px" }
+    },
+    "cluster": {
+      "bg": { "$type": "color", "$value": "{color.brand.default}" },
+      "fg": { "$type": "color", "$value": "{color.brand.on}" },
+      "size": { "$type": "dimension", "$value": "44px" }
+    },
+    "popup": {
+      "width": { "$type": "dimension", "$value": "280px" }
+    }
+  }
+}

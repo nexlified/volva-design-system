@@ -1,0 +1,17 @@
+name: volva_ds_flutter
+description: Volva design system for Flutter - generated tokens, ThemeData and widgets mirroring the Twig components.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0

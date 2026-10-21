@@ -1,0 +1,2 @@
+{% set attrs = attributes ?: create_attribute() %}
+<span{{ attrs.addClass(['vds-badge', 'vds-badge--' ~ tone|default('neutral')]) }}>{{ label }}</span>

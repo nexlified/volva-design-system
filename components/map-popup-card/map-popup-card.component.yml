@@ -1,0 +1,14 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Map popup card
+status: stable
+description: Compact card shown when a map pin is selected. Flutter parity - VdsMapPopupCard (bottom sheet on mobile).
+props:
+  type: object
+  properties:
+    title: { type: string }
+    href: { type: string }
+    image: { type: string }
+    subtitle: { type: string }
+    rating: { type: number }
+    review_count: { type: integer }
+    price: { type: string }

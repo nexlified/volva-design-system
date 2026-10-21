@@ -1,0 +1,25 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Product detail
+status: stable
+description: Product page main section - gallery, info, vendor strip, CTAs. Flutter parity - VdsProductDetail.
+props:
+  type: object
+  properties:
+    title: { type: string }
+    images: { type: array, items: { type: object, properties: { src: { type: string }, alt: { type: string } } } }
+    price: { type: string }
+    compare_at: { type: string }
+    on_request: { type: boolean, default: false }
+    rating: { type: number }
+    review_count: { type: integer }
+    badge: { type: string }
+    description: { type: string }
+    specs:
+      type: array
+      items: { type: object, properties: { label: { type: string }, value: { type: string } } }
+    available: { type: boolean, default: true }
+    vendor_name: { type: string }
+    vendor_href: { type: string }
+    vendor_logo: { type: string }
+    vendor_rating: { type: number }
+    cta_label: { type: string, default: Contact vendor }

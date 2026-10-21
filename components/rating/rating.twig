@@ -1,0 +1,13 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set v = value|default(0) %}
+{% set pct = (v / 5 * 100)|round(0) %}
+<span{{ attrs.addClass(['vds-rating']) }} role="img" aria-label="{{ v }} out of 5{% if count is not null and count is defined %}, {{ count }} reviews{% endif %}">
+  {% if compact %}
+    <span class="vds-rating__star vds-rating__star--on" aria-hidden="true">★</span>
+    <span class="vds-rating__value">{{ v|number_format(1) }}</span>
+  {% else %}
+    <span class="vds-rating__stars" aria-hidden="true" style="--vds-rating-pct: {{ pct }}%">★★★★★</span>
+    <span class="vds-rating__value">{{ v|number_format(1) }}</span>
+  {% endif %}
+  {% if count is defined and count is not null %}<span class="vds-rating__count">({{ count }})</span>{% endif %}
+</span>

@@ -1,0 +1,32 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set classes = ['vds-vendor-card', 'vds-vendor-card--' ~ orientation|default('vertical')] %}
+{% if loading %}
+<article{{ attrs.addClass(classes|merge(['is-skeleton'])) }} aria-hidden="true">
+  <div class="vds-vendor-card__media"></div>
+  <div class="vds-vendor-card__body"><span class="vds-skeleton-line"></span><span class="vds-skeleton-line vds-skeleton-line--short"></span></div>
+</article>
+{% else %}
+<article{{ attrs.addClass(classes) }}>
+  <div class="vds-vendor-card__media">
+    {% if image %}<img src="{{ image }}" alt="" loading="lazy">{% endif %}
+    {% if featured %}<span class="vds-vendor-card__flag">{% include 'volva_ds:badge' with { label: 'Featured', tone: 'warning' } only %}</span>{% endif %}
+  </div>
+  <div class="vds-vendor-card__body">
+    <div class="vds-vendor-card__head">
+      {% include 'volva_ds:avatar' with { src: logo, initials: name|slice(0, 2)|upper, size: 'md', shape: 'square' } only %}
+      <div>
+        <h3 class="vds-vendor-card__title"><a href="{{ href|default('#') }}" class="vds-vendor-card__link">{{ name }}</a></h3>
+        {% if category %}<p class="vds-vendor-card__meta">{{ category }}</p>{% endif %}
+      </div>
+    </div>
+    {% if rating is defined and rating is not null %}{% include 'volva_ds:rating' with { value: rating, count: review_count, compact: true } only %}{% endif %}
+    <p class="vds-vendor-card__meta">{{ location }}{% if distance %} · {{ distance }}{% endif %}</p>
+    {% if verified or open_now is not null and open_now is defined %}
+      <div class="vds-vendor-card__badges">
+        {% if verified %}{% include 'volva_ds:badge' with { label: 'Verified', tone: 'brand' } only %}{% endif %}
+        {% if open_now is not null and open_now is defined %}{% include 'volva_ds:badge' with { label: open_now ? 'Open now' : 'Closed', tone: open_now ? 'success' : 'neutral' } only %}{% endif %}
+      </div>
+    {% endif %}
+  </div>
+</article>
+{% endif %}

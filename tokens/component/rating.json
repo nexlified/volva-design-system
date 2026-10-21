@@ -1,0 +1,7 @@
+{
+  "rating": {
+    "starFilled": { "$type": "color", "$value": "{color.rating}" },
+    "starEmpty": { "$type": "color", "$value": "{palette.neutral.300}" },
+    "size": { "$type": "dimension", "$value": "16px" }
+  }
+}

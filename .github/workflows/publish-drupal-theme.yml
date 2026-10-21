@@ -1,0 +1,76 @@
+# Builds the symlink-free Drupal theme package and pushes it to the `drupal-theme` branch.
+# Composer reads composer.json from that branch's root. Release tags are created manually on it:
+#   git fetch origin drupal-theme && git tag v0.1.0 origin/drupal-theme && git push origin v0.1.0
+name: Publish Drupal theme
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tokens/**'
+      - 'components/**'
+      - 'styles/**'
+      - 'drupal/**'
+      - 'style-dictionary.config.mjs'
+      - 'scripts/build-drupal-theme.mjs'
+      - 'package*.json'
+      - '.github/workflows/publish-drupal-theme.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-drupal-theme
+  cancel-in-progress: false
+
+env:
+  TARGET_BRANCH: drupal-theme
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: src
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: src/package-lock.json
+
+      - name: Build theme package
+        working-directory: src
+        run: |
+          npm ci
+          npm run check
+          npm run build:drupal
+
+      - name: Check out target branch (or start it)
+        run: |
+          if git ls-remote --exit-code --heads "https://github.com/${GITHUB_REPOSITORY}.git" "$TARGET_BRANCH" >/dev/null; then
+            git clone --branch "$TARGET_BRANCH" --single-branch "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" out
+          else
+            git init -b "$TARGET_BRANCH" out
+            git -C out remote add origin "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git"
+          fi
+
+      - name: Replace branch content with the build
+        run: |
+          find out -mindepth 1 -maxdepth 1 -not -name .git -exec rm -rf {} +
+          cp -R src/build/volva_ds/. out/
+
+      - name: Commit and push if changed
+        working-directory: out
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            exit 0
+          fi
+          git commit -m "Build Drupal theme from ${GITHUB_SHA::7}" -m "Source: ${GITHUB_REPOSITORY}@${GITHUB_SHA}"
+          git push origin "$TARGET_BRANCH"

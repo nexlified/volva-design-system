@@ -1,0 +1,19 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Vendor header
+status: stable
+description: Vendor profile hero - cover, logo, rating, badges, CTAs. Flutter parity - VdsVendorHeader.
+props:
+  type: object
+  properties:
+    name: { type: string }
+    cover: { type: string }
+    logo: { type: string }
+    tagline: { type: string }
+    category: { type: string }
+    location: { type: string }
+    rating: { type: number }
+    review_count: { type: integer }
+    verified: { type: boolean, default: false }
+    cta_label: { type: string, default: Contact }
+    cta_href: { type: string }
+    secondary_label: { type: string, default: Save }

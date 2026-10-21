@@ -1,0 +1,12 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Price
+status: stable
+description: Formatted price with optional compare-at price and unit. Flutter parity - VdsPrice.
+props:
+  type: object
+  properties:
+    amount: { type: string, description: 'Pre-formatted amount incl. currency (formatting is locale logic owned by the platform).' }
+    compare_at: { type: string, description: 'Original price shown struck through.' }
+    unit: { type: string, description: 'e.g. "/ night", "/ kg".' }
+    size: { type: string, enum: [md, lg], default: md }
+    on_request: { type: boolean, default: false, description: 'Show "Price on request".' }

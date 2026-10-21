@@ -1,0 +1,11 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set variant = variant|default('primary') %}
+{% set size = size|default('md') %}
+{% set classes = ['vds-button', 'vds-button--' ~ variant, 'vds-button--' ~ size] %}
+{% if full_width %}{% set classes = classes|merge(['vds-button--block']) %}{% endif %}
+{% if icon_only %}{% set classes = classes|merge(['vds-button--icon']) %}{% endif %}
+{% if loading %}{% set classes = classes|merge(['is-loading']) %}{% endif %}
+{% set tag = href ? 'a' : 'button' %}
+<{{ tag }}{{ attrs.addClass(classes) }}{% if href %} href="{{ href }}"{% if disabled or loading %} aria-disabled="true" tabindex="-1"{% endif %}{% else %} type="{{ type|default('button') }}"{% if disabled or loading %} disabled{% endif %}{% endif %}{% if loading %} aria-busy="true"{% endif %}{% if icon_only %} aria-label="{{ label }}"{% endif %}>
+  {%- block content -%}{{ label }}{%- endblock -%}
+</{{ tag }}>

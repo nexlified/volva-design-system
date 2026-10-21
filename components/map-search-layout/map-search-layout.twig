@@ -1,0 +1,9 @@
+{% set attrs = attributes ?: create_attribute() %}
+<div{{ attrs.addClass(['vds-map-layout', 'vds-map-layout--' ~ view|default('list')]) }}>
+  <div class="vds-map-layout__filters">{% block filters %}{{ filters }}{% endblock %}</div>
+  <section class="vds-map-layout__results" aria-label="Results">{% block results %}{{ results }}{% endblock %}</section>
+  <section class="vds-map-layout__map" aria-label="Map">{% block map %}{{ map }}{% endblock %}</section>
+  <div class="vds-map-layout__toggle">
+    {% include 'volva_ds:button' with { label: view|default('list') == 'map' ? 'Show list' : 'Show map', size: 'md' } only %}
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{% set attrs = attributes ?: create_attribute() %}
+<span{{ attrs.addClass(['vds-price', 'vds-price--' ~ size|default('md')]) }}>
+  {% if on_request %}
+    <span class="vds-price__request">Price on request</span>
+  {% else %}
+    <span class="vds-price__amount">{{ amount }}</span>
+    {% if unit %}<span class="vds-price__unit">{{ unit }}</span>{% endif %}
+    {% if compare_at %}<s class="vds-price__compare">{{ compare_at }}</s>{% endif %}
+  {% endif %}
+</span>

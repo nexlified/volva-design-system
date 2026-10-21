@@ -1,0 +1,11 @@
+{
+  "card": {
+    "bg": { "$type": "color", "$value": "{color.surface.default}" },
+    "border": { "$type": "color", "$value": "{color.border.default}" },
+    "radius": { "$type": "dimension", "$value": "{radius.lg}" },
+    "padding": { "$type": "dimension", "$value": "{space.4}" },
+    "gap": { "$type": "dimension", "$value": "{space.3}" },
+    "shadow": { "$type": "shadow", "$value": "{shadow.sm}" },
+    "shadowHover": { "$type": "shadow", "$value": "{shadow.md}" }
+  }
+}

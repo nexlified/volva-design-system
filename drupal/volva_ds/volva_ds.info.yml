@@ -1,0 +1,8 @@
+name: Volva Design System
+type: theme
+description: 'Base theme exposing the Volva design system as Single Directory Components (volva_ds:*) plus global tokens. Sub-theme it; do not edit components here.'
+package: Volva
+core_version_requirement: ^10.3 || ^11
+base theme: false
+libraries:
+  - volva_ds/global

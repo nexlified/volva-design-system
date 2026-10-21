@@ -1,0 +1,15 @@
+{
+  "badge": {
+    "radius": { "$type": "dimension", "$value": "{radius.full}" },
+    "paddingX": { "$type": "dimension", "$value": "{space.2}" },
+    "paddingY": { "$type": "dimension", "$value": "{space.1}" },
+    "fontSize": { "$type": "dimension", "$value": "{font.size.xs}" },
+    "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.semibold}" },
+    "neutral": { "$type": "color", "bg": { "$value": "{color.surface.muted}" }, "fg": { "$value": "{color.text.muted}" } },
+    "brand": { "$type": "color", "bg": { "$value": "{color.brand.subtle}" }, "fg": { "$value": "{color.brand.hover}" } },
+    "success": { "$type": "color", "bg": { "$value": "{color.status.successBg}" }, "fg": { "$value": "{color.status.success}" } },
+    "warning": { "$type": "color", "bg": { "$value": "{color.status.warningBg}" }, "fg": { "$value": "{color.status.warning}" } },
+    "danger": { "$type": "color", "bg": { "$value": "{color.status.dangerBg}" }, "fg": { "$value": "{color.status.danger}" } },
+    "info": { "$type": "color", "bg": { "$value": "{color.status.infoBg}" }, "fg": { "$value": "{color.status.info}" } }
+  }
+}

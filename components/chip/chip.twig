@@ -1,0 +1,5 @@
+{% set attrs = attributes ?: create_attribute() %}
+{% set tag = href ? 'a' : 'button' %}
+<{{ tag }}{{ attrs.addClass(active ? ['vds-chip', 'is-active'] : ['vds-chip']) }}{% if href %} href="{{ href }}"{% else %} type="button"{% endif %} aria-pressed="{{ active ? 'true' : 'false' }}">
+  <span>{{ label }}</span>{% if removable %}<span class="vds-chip__remove" aria-hidden="true">×</span>{% endif %}
+</{{ tag }}>

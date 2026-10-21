@@ -1,0 +1,4 @@
+.vds-price { display: inline-flex; align-items: baseline; gap: var(--vds-space-2); }
+.vds-price__amount { font-size: var(--vds-font-size-lg); font-weight: var(--vds-font-weight-bold); }
+.vds-price--lg .vds-price__amount { font-size: var(--vds-font-size-3xl); }
+.vds-price__unit, .vds-price__compare, .vds-price__request { font-size: var(--vds-font-size-sm); color: var(--vds-color-text-muted); }

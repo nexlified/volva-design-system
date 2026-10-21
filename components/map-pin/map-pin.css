@@ -1,0 +1,10 @@
+.vds-map-pin {
+  display: inline-flex; align-items: center; justify-content: center; height: var(--vds-map-pin-height); padding: 0 var(--vds-space-3);
+  font: inherit; font-size: var(--vds-font-size-sm); font-weight: var(--vds-font-weight-semibold); cursor: pointer;
+  color: var(--vds-map-pin-fg); background: var(--vds-map-pin-bg); border: 1px solid var(--vds-map-pin-border);
+  border-radius: var(--vds-radius-full); box-shadow: var(--vds-shadow-md); transition: transform var(--vds-motion-duration-fast);
+}
+.vds-map-pin:hover { transform: scale(1.06); }
+.vds-map-pin.is-active { color: var(--vds-map-pin-fg-active); background: var(--vds-map-pin-bg-active); border-color: var(--vds-map-pin-bg-active); transform: scale(1.12); z-index: 1; }
+.vds-map-pin.is-visited:not(.is-active) { color: var(--vds-color-text-subtle); background: var(--vds-color-surface-muted); }
+.vds-map-pin--cluster { width: var(--vds-map-cluster-size); height: var(--vds-map-cluster-size); padding: 0; color: var(--vds-map-cluster-fg); background: var(--vds-map-cluster-bg); border: 3px solid var(--vds-color-surface-default); }

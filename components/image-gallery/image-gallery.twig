@@ -1,0 +1,13 @@
+{% set attrs = attributes ?: create_attribute() %}
+<div{{ attrs.addClass(['vds-gallery']) }}>
+  {% if images|length %}
+    <img class="vds-gallery__main" src="{{ images[0].src }}" alt="{{ images[0].alt }}">
+    {% if images|length > 1 %}
+      <ul class="vds-gallery__thumbs">
+        {% for img in images %}<li><img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy"{% if loop.first %} class="is-current"{% endif %}></li>{% endfor %}
+      </ul>
+    {% endif %}
+  {% else %}
+    <div class="vds-gallery__main vds-gallery__main--empty" role="img" aria-label="No image available"></div>
+  {% endif %}
+</div>

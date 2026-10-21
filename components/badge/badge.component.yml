@@ -1,0 +1,9 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Badge
+status: stable
+description: Small status label (verified, featured, open now...). Flutter parity - VdsBadge.
+props:
+  type: object
+  properties:
+    label: { type: string }
+    tone: { type: string, enum: [neutral, brand, success, warning, danger, info], default: neutral }

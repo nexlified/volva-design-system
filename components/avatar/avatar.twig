@@ -1,0 +1,4 @@
+{% set attrs = attributes ?: create_attribute() %}
+<span{{ attrs.addClass(['vds-avatar', 'vds-avatar--' ~ size|default('md'), 'vds-avatar--' ~ shape|default('circle')]) }}>
+  {% if src %}<img src="{{ src }}" alt="{{ alt|default('') }}" loading="lazy">{% else %}<span aria-hidden="true">{{ initials }}</span>{% endif %}
+</span>

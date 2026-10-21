@@ -1,0 +1,13 @@
+{% set attrs = attributes ?: create_attribute() %}
+<footer{{ attrs.addClass(['vds-site-footer']) }}>
+  <div class="vds-site-footer__inner">
+    <div class="vds-site-footer__brand"><strong>{{ site_name|default('Volva') }}</strong>{% if tagline %}<p>{{ tagline }}</p>{% endif %}</div>
+    {% for col in columns %}
+      <nav class="vds-site-footer__col" aria-label="{{ col.title }}">
+        <h2>{{ col.title }}</h2>
+        <ul>{% for l in col.links %}<li><a href="{{ l.href }}">{{ l.label }}</a></li>{% endfor %}</ul>
+      </nav>
+    {% endfor %}
+  </div>
+  {% if copyright %}<p class="vds-site-footer__legal">{{ copyright }}</p>{% endif %}
+</footer>

@@ -1,0 +1,16 @@
+/* Global base: resets + typography driven only by global tokens. Attached once per page (Drupal library / Storybook preview). */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--vds-font-family-sans);
+  font-size: var(--vds-font-size-md);
+  line-height: var(--vds-font-line-height-normal);
+  color: var(--vds-color-text-default);
+  background: var(--vds-color-surface-default);
+}
+img { max-width: 100%; display: block; }
+a { color: var(--vds-color-text-link); }
+:focus-visible { outline: 2px solid var(--vds-color-border-focus); outline-offset: 2px; }
+h1, h2, h3, h4 { font-family: var(--vds-font-family-display); line-height: var(--vds-font-line-height-tight); margin: 0; }
+.vds-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
