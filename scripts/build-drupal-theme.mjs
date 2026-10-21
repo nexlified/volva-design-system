@@ -21,6 +21,7 @@ for (const f of ['volva_ds.info.yml', 'volva_ds.libraries.yml', 'composer.json',
   cpSync(join(src, f), join(out, f));
 }
 cpSync(join(repo, 'dist/css/tokens.css'), join(out, 'dist/css/tokens.css'));
+cpSync(join(repo, 'dist/css/themes'), join(out, 'dist/css/themes'), { recursive: true });
 cpSync(join(repo, 'styles/base.css'), join(out, 'styles/base.css'));
 cpSync(join(repo, 'styles/typography.css'), join(out, 'styles/typography.css'));
 // Components: twig + css + yml only; stories are Storybook-only.

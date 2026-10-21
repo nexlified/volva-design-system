@@ -1,0 +1,52 @@
+{
+  "palette": {
+    "brand": {
+      "$type": "color",
+      "50": {
+        "$value": "#F9EFF4"
+      },
+      "100": {
+        "$value": "#F4DFE9"
+      },
+      "200": {
+        "$value": "#E3AFC9"
+      },
+      "300": {
+        "$value": "#E98BAA"
+      },
+      "400": {
+        "$value": "#EE5E80"
+      },
+      "500": {
+        "$value": "#E8305C"
+      },
+      "600": {
+        "$value": "#E11A45"
+      },
+      "700": {
+        "$value": "#B8143A"
+      },
+      "800": {
+        "$value": "#911131"
+      },
+      "900": {
+        "$value": "#700D26"
+      }
+    },
+    "neutral": {
+      "$type": "color",
+      "50": {
+        "$value": "#F8F6EA"
+      },
+      "100": {
+        "$value": "#EFECD7"
+      }
+    },
+    "warning": {
+      "$type": "color",
+      "500": {
+        "$value": "#EDC92C"
+      }
+    }
+  }
+}

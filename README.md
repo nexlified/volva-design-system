@@ -80,6 +80,19 @@ Output naming:
 
 Edit `tokens/global/palette.json` (e.g. the `brand` ramp) or `tokens/global/foundation.json` (font family, radii…), then `npm run tokens`. Both platforms update from the same edit. Current values are **placeholders** pending Volva brand assets.
 
+### Colour themes (ocean, sunset, forest, plum, dusk)
+
+`themes/<name>.json` overrides `palette.brand` and, where a palette calls for it, a few other palette values (`sunset` and `dusk` also set cream surfaces via `palette.neutral`; `sunset` sets the rating star via `palette.warning.500`). `npm run tokens` builds each into `dist/css/themes/<name>.css`, scoped to `[data-vds-theme="<name>"]`, containing just the tokens that change (the ramp and everything derived from it). With no attribute you get the default teal brand.
+
+```html
+<html data-vds-theme="sunset">   <!-- or any wrapper element, to theme just a region -->
+```
+
+- **Storybook**: use the *Theme* toolbar dropdown.
+- **Drupal**: all four stylesheets ship in the `global` library; set the attribute from your sub-theme (e.g. `$variables['attributes']['data-vds-theme']` in `hook_preprocess_html`).
+- **New theme**: add `themes/<name>.json` with a `palette.brand` ramp (50–900; keep 600/700 at ≥4.5:1 on white), then list its CSS in `volva_ds.libraries.yml` and `.storybook/preview.js`.
+- **Flutter** is not themed yet; it still builds from the default ramp.
+
 ### Adding a component token
 
 1. Create or edit `tokens/component/<name>.json`, referencing semantic tokens.
